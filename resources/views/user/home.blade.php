@@ -86,23 +86,25 @@
                         </li>
 
                         @if(Route::has('login'))
-                        @auth
+    @auth
+        <!-- User is authenticated -->
+        <li class="nav-item">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a href="#" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();" style="color:red">Logout</a>
+            </form>
+        </li>
+    @else
+        <!-- User is not authenticated -->
+        <li class="nav-item">
+            <a class="btn btn-primary ml-lg-3" href="{{ route('login') }}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-primary ml-lg-3" href="{{ route('register') }}">Register</a>
+        </li>
+    @endauth
+@endif
 
-                        <x-app-layout>
-
-                        </x-app-layout>
-
-                        @else
-                        <li class="nav-item">
-                            <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login</a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
-                        </li>
-                        @endauth
-                        @endif
 
                     </ul>
                 </div> <!-- .navbar-collapse -->
