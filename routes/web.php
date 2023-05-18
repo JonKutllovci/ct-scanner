@@ -21,7 +21,6 @@ Route::get('/add_doctor_view', [AdminController::class,'addView']);
 
 Route::post('/upload_doctor', [AdminController::class,'upload']);
 
-
 Route::get('/home', [HomeController::class,'redirect']);
 
 Route::middleware([
