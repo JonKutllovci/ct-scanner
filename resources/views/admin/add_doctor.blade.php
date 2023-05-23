@@ -78,7 +78,7 @@
                             <label>Speciality</label>
                             <select name="speciality" class="color" required>
                                 <option>--Select--</option>
-                                <option value="skin">Skin</option>
+                                <option value="Radiolog">Radiolog</option>
                                 <option value="nose">Nose</option>
                                 <option value="heart">Heart</option>
                                 <option value="eye">Eye</option>
