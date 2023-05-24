@@ -84,10 +84,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="background-color:green; color:white;" href="{{url('myappointment')}}">My appointment</a>
+                        </li>
+                
 
                         @if(Route::has('login'))
                         @auth
-                        <!-- User is authenticated -->
+                        <li class="nav-item">
+                            <a class="nav-link" style="background-color:green; color:white;" href="{{url('myappointment')}}">My appointment</a>
+                        </li>
+
                         <li class="nav-item">
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
