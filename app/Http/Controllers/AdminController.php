@@ -44,8 +44,8 @@ class AdminController extends Controller
 
     public function approved($id)
     {
-        $data=appointment::find($id);
-        $data->status='Approved';
+        $data = appointment::find($id);
+        $data->status = 'Approved';
         $data->save();
         return redirect()->back();
     }
@@ -53,9 +53,47 @@ class AdminController extends Controller
 
     public function canceled($id)
     {
-        $data=appointment::find($id);
-        $data->status='Canceled';
+        $data = appointment::find($id);
+        $data->status = 'Canceled';
         $data->save();
         return redirect()->back();
+    }
+
+
+    public function showdoctor()
+    {
+        $data = doctor::all();
+        return view('admin.showdoctor', compact('data'));
+    }
+
+
+    public function deletedoctor($id)
+    {
+        $data = doctor::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+
+    public function updatedoctor($id)
+    {
+        $data = doctor::find($id);
+        return view('admin.update_doctor', compact('data'));
+    }
+
+    public function editdoctor(Request $request, $id)
+    {
+        $doctor = doctor::find($id);
+        $doctor->name = $request->name;
+        $doctor->phone = $request->phone;
+        $doctor->speciality = $request->speciality;
+        $doctor->room = $request->room;
+        $image = $request->file;
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->file->move('doctor_image', $imagename);
+            $doctor->image = $imagename;
+        }
+        $doctor->save();
+        return redirect()->back()->with('message', 'Doctor Details Updated Succesfuly!');
     }
 }
