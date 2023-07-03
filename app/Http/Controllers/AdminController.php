@@ -15,6 +15,10 @@ class AdminController extends Controller
         return view('admin.add_doctor');
     }
 
+    public function addNews(){
+        return view('admin.add_news');
+
+    }
 
     public function upload(Request $request)
     {

@@ -25,7 +25,10 @@ class HomeController extends Controller
         }
     }
 
-
+    public function blog()
+    {
+        return view('blog-news.news');
+    }
     public function index()
     {
         if (Auth::id()) {

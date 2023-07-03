@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,8 +25,13 @@ Route::post('/upload_doctor', [AdminController::class,'upload']);
 
 Route::get('/home', [HomeController::class,'redirect']);
 
+Route::get('/news', [HomeController::class,'blog']);
 
 Route::post('/appointment', [HomeController::class,'appointment']);
+
+Route::post('/upload_news', [PostController::class, 'store']);
+
+Route::get('/add_news', [AdminController::class,'addNews']);
 
 
 Route::get('/myappointment', [HomeController::class,'myappointment']);
