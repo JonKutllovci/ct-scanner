@@ -29,7 +29,7 @@ Route::get('/news', [HomeController::class,'blog']);
 
 Route::post('/appointment', [HomeController::class,'appointment']);
 
-Route::post('/upload_news', [PostController::class, 'store']);
+Route::post('/add_post', [AdminController::class, 'add_post']);
 
 Route::get('/add_news', [AdminController::class,'addNews']);
 

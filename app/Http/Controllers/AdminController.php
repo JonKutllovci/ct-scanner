@@ -4,19 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function addView()
     {
-
-
         return view('admin.add_doctor');
     }
 
-    public function addNews(){
+    public function addNews()
+    {
         return view('admin.add_news');
+
+    }
+
+
+    public function add_post(Request $request)
+    {
+        $post = new News;
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->body = $request->body;
+
+        $image = $request->image;
+        $imagename  = time() . "." . $image->getClientOriginalExtension();
+        $request->image->move("news_image", $imagename);
+        $post->image = $imagename;
+        $post->save();
+
+        return redirect()->back();
+
 
     }
 
