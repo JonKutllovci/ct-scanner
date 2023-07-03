@@ -33,6 +33,8 @@ Route::post('/add_post', [AdminController::class, 'add_post']);
 
 Route::get('/add_news', [AdminController::class,'addNews']);
 
+Route::get('/show_news', [AdminController::class,'show_news']);
+
 
 Route::get('/myappointment', [HomeController::class,'myappointment']);
 

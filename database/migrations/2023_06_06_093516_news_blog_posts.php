@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->longText('body')->nullable();
             $table->string('image')->nullable();
+            $table->string('name')->nullable();
             $table->string('user_id')->nullable();
             $table->string('post_status')->nullable();
             $table->string('usertype')->nullable();

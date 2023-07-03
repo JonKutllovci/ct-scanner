@@ -6,6 +6,8 @@ use App\Models\Doctor;
 use App\Models\Appointment;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -23,25 +25,36 @@ class AdminController extends Controller
 
     public function add_post(Request $request)
     {
+        $user = Auth()->user();
+        $user_id = $user->id;
+        $name = $user->name;
+        $usertype = $user->usertype;
         $post = new News;
         $post->title = $request->title;
         $post->description = $request->description;
         $post->body = $request->body;
-
+        $post->name = $name;
+        $post->user_id = $user_id;
+        $post->usertype = $usertype;
+        $post->post_status = 'active';
         $image = $request->image;
-        $imagename  = time() . "." . $image->getClientOriginalExtension();
-        $request->image->move("news_image", $imagename);
-        $post->image = $imagename;
+        if ($image) {
+            $imagename = time() . "." . $image->getClientOriginalExtension();
+            $request->image->move("news_image", $imagename);
+            $post->image = $imagename;
+        }
         $post->save();
-
-        return redirect()->back();
-
-
+        return redirect()->back()->with('message', 'News added successfully!');
     }
 
+    public function show_news()
+    {
+        $post = News::all();
+
+        return view('admin.shownews', compact('post'));
+    }
     public function upload(Request $request)
     {
-
         $doctor = new doctor;
         $image = $request->file;
         $image_name = time() . '.' . $image->getClientoriginalExtension();
