@@ -35,6 +35,11 @@ Route::get('/add_news', [AdminController::class,'addNews']);
 
 Route::get('/show_news', [AdminController::class,'show_news']);
 
+Route::get('/delete_post/{id}', [AdminController::class,'delete_post']);
+
+Route::get('/update_post/{id}', [AdminController::class,'update_post']);
+
+Route::post('/update_news/{id}', [AdminController::class,'update_news']);
 
 Route::get('/myappointment', [HomeController::class,'myappointment']);
 

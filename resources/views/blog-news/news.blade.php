@@ -70,10 +70,10 @@
                         <div class="tm-site-name-container">
                             <div class="tm-site-name-container-inner">
                                 <h1 class="text-uppercase tm-text-primary tm-site-name">
-                                    Our blogs
+                                    News
                                 </h1>
                                 <p class="tm-text-primary tm-site-description">
-                                    Read and have fun enjoying our blogs </p>
+                                    Read and enjoy our News! </p>
                             </div>
                         </div>
                     </div>
@@ -98,83 +98,90 @@
                 </div>
             </div>
         </section>
+        @foreach ($post as $post)
+            <!-- Our Place -->
+            <section id="our_place">
+                <div class="container-fluid">
+                    <div class="row">
 
-        <!-- Our Place -->
-        <section id="our_place">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
-                        <img src="blog/img/forty_image_01.jpg" alt="Image" class="img-fluid" />
-                    </div>
-                    <div class="col-md-12 col-lg-6">
-                        <div class="tm-section-text-container-2">
-                            <h2 class="tm-text-primary tm-section-title-mb tm-sm-bg-white-alpha">
-                                Our Place
-                            </h2>
-                            <div class="tm-text-gray">
-                                <p class="mb-4">
-                                    Sided Bootstrap v4.2.1 template has 3 HTML pages. <a href="index.html">Index</a>,
-                                    <a href="page-2.html">Page 2</a> and <a href="page-3.html">Page 3</a>.
-                                    You may share this Sided template or <a rel="nofollow"
-                                        href="https://www.facebook.com/templatemo">our templatemo page</a> to your
-                                    friends. Pellentesque commodo malesuada est.
-                                </p>
-                                <p class="mb-0">
-                                    Suspendisse porttitor sollicitudin nisi et bibendum. Donec
-                                    ac semper ante, non sagittis sapien. Duis hendrerit tellus
-                                    sit amet cursus euismod.
-                                </p>
+
+                        <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
+                            <img height="400px" src="/news_image/{{$post->image}}"  alt="Image" class="img-fluid" />
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="tm-section-text-container-2">
+                                <h2 class="tm-text-primary tm-section-title-mb tm-sm-bg-white-alpha">
+                                    {{ $post->title }} </h2>
+                                <h6 class="tm-text-accent tm-section-title-mb">
+                                    {{ $post->description }}
+                                </h6>
+                                <div class="tm-text-gray">
+                                    <p class="mb-4">
+                                        {{ $post->body
+                                        }}
+                                    </p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Fusce, Section 4 -->
-        <section id="section_4" class="tm-section-4">
-            <div class="container-fluid">
-                <div class="row flex-column-reverse flex-lg-row">
-                    <div class="col-md-12 col-lg-6 tm-text-left-container">
-                        <div class="tm-section-text-container-3 tm-bg-white-alpha h-100">
-                            <h2 class="tm-text-accent tm-section-title-mb">
-                                Fusce a porttitor augue
-                            </h2>
-                            <p class="mb-0">
-                                Quisque rutrum dapibus odio vitae tincidunt. Etiam
-                                sollicitudin augue non porta interdum. Pellentesque placerat
-                                orci at libero ornare, nec viverra justo lobortis. Phasellus
-                                venenatis eros non.
-                            </p>
+                </div>
+            </section>
+            <!-- Fusce, Section 4 -->
+            <section id="section_4" class="tm-section-4">
+                <div class="container-fluid">
+                    <div class="row flex-column-reverse flex-lg-row">
+                        <div class="col-md-12 col-lg-6 tm-text-left-container">
+                            <div class="tm-section-text-container-3 tm-bg-white-alpha h-100">
+                                <h2 class="tm-text-accent tm-section-title-mb">
+                                    {{ $post->title }}
+
+                                </h2>
+                                <h6 class="tm-text-accent tm-section-title-mb">
+                                    {{ $post->description }}
+                                </h6>
+                                <p class="mb-0">
+                                    {{ $post->body
+                                    }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-right-container">
+                            <img height="400px" src="/news_image/{{$post->image}}" alt="Image" class="img-fluid tm-img-right" />
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-right-container">
-                        <img src="blog/img/forty_image_02.jpg" alt="Image" class="img-fluid tm-img-right" />
-                    </div>
                 </div>
-            </div>
-        </section>
-
+            </section>
         <!-- Beautiful Rollovers -->
-        <section id="gallery">
+        @endforeach
+
+
+
+
+
+<section id="gallery">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 tm-section-title-mb tm-gallery-title-col">
-                        <h2 class="tm-section-title-2">Beautiful Rollovers</h2>
+                        <h2 class="tm-section-title-2">Other News</h2>
                         <hr class="tm-section-title-underline" />
                     </div>
 
                     <div class="col-12">
                         <div class="grid">
+                            @foreach ($data as $data)
                             <figure class="effect-duke mb-3">
-                                <img src="blog/img/forty_image_11.jpg" alt="Image" class="img-fluid" />
+                                <img width="300px" height="400px" src="/news_image/{{$data->image}}" alt="Image" class="img-fluid" />
                                 <figcaption>
-                                    <h2>Messy <span>Duke</span></h2>
-                                    <p>When he looks at the sky, he feels to run.</p>
+                                    <h2>{{ $data->title }}</h2>
+                                    <p>{{ $data->description }}</p>
                                     <a href="#">View more</a>
                                 </figcaption>
                             </figure>
-                            <figure class="effect-duke">
+                            @endforeach
+
+                            {{-- <figure class="effect-duke">
                                 <img src="blog/img/forty_image_12.jpg" alt="Image" class="img-fluid" />
                                 <figcaption>
                                     <h2>Messy <span>Duke</span></h2>
@@ -197,27 +204,12 @@
                                     <p>When he looks at the sky, he feels to run.</p>
                                     <a href="#">View more</a>
                                 </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 tm-section-col-4">
-                        <div class="tm-section-text-container-4">
-                            <p class="tm-text-secondary mb-0">
-                                Description text for beautiful rollovers using text color code
-                                #999 for this line. Quisque pharetra mauris in libero vaius
-                                tristique.
-                            </p>
+                            </figure> --}}
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
-
-
-
 
     </div>
     <!-- /.columns-bg -->

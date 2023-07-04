@@ -53,6 +53,38 @@ class AdminController extends Controller
 
         return view('admin.shownews', compact('post'));
     }
+
+
+    public function delete_post($id)
+    {
+        $post = News::find($id);
+        $post->delete();
+        return redirect()->back()->with('message', 'Post Deleted Successfully');
+    }
+
+    public function update_post($id)
+    {
+        $post = News::find($id);
+
+        return view('admin.update_news', compact('post'));
+    }
+
+    public function update_news(Request $request, $id)
+    {
+        $data = News::find($id);
+        $data->title = $request->title;
+        $data->description = $request->description;
+        $data->body = $request->body;
+        $image = $request->image;
+        if ($image) {
+            $imagename = time() . "." . $image->getClientOriginalExtension();
+            $request->image->move("news_image", $imagename);
+            $data->image = $imagename;
+        }
+        $data->save();
+
+        return redirect()->back()->with('message', 'Post Updated Successfully!');
+    }
     public function upload(Request $request)
     {
         $doctor = new doctor;

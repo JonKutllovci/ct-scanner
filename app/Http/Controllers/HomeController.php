@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Models\News;
 
 
 class HomeController extends Controller
@@ -27,8 +28,11 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('blog-news.news');
+        $post =  News::all()->keyBy('id');
+        $data = News::all();
+        return view('blog-news.news', compact('post', 'data'));
     }
+
     public function index()
     {
         if (Auth::id()) {

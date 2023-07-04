@@ -3,6 +3,8 @@
 
 <head>
     <!-- Required meta tags -->
+    <base href="/public">
+    @include('admin.css');
     <style type="text/css">
         .container {
             display: flex;
@@ -36,8 +38,6 @@
             color: black;
         }
     </style>
-
-    @include('admin.css');
 </head>
 
 <body>
@@ -51,8 +51,9 @@
         <div class="container-fluid page-body-wrapper">
 
             <div class="container" align="center" style="padding-top: 50px;">
+
                 <div class="form-container">
-                   <h1 style="font-size: 30px;"> Add news</h1>
+                    <h1 align="center" style="font-size: 30px;">Update Post</h1>
                     @if (session()->has('message'))
                         <div class="alert alert-success">
 
@@ -61,37 +62,45 @@
 
                         </div>
                     @endif
-                    <form action="{{ url('add_post') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('update_news', $post->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text" name="title" class="color" placeholder="Write the Name" required>
+                            <input type="text" name="title" class="color" value="{{ $post->title }}"
+                                placeholder="Write the Name" required>
                         </div>
 
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" name="description" class="color" placeholder="Write the Number"
-                                required>
+                            <input type="text" name="description" class="color" value="{{ $post->description }}"
+                                placeholder="Write Description" required>
                         </div>
 
                         <div class="form-group">
                             <label>Body</label>
-                            <textarea name="body" class="color" placeholder="Explain your story" style=" width: 100%; height: 150px;"></textarea>
+
+                            <textarea name="body" class="color" placeholder="Explain your story" style=" width: 100%; height: 150px;">{{ $post->body }}</textarea>
                         </div>
 
                         <div class="form-group">
-                            <label>News Image</label>
-                            <input type="file" name="image" id="" required>
+                            <label>Old Image</label>
+                            <img height="200px" width="250px" src="/news_image/{{ $post->image }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Update Old Image</label>
+                            <input type="file" name="image" id="">
                         </div>
 
                         <div class="">
-                            <input type="submit" class="btn btn-success">
+                            <input type="submit" value="Update" class="btn btn-success">
                         </div>
+
                     </form>
+
                 </div>
             </div>
         </div>
-        <!-- container-scroller -->
         <!-- plugins:js -->
         @include('admin.script')
     </div>
