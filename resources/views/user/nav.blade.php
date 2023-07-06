@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">CT</span>-Scanner</a>
+        <a class="navbar-brand" href="#"><img style="width:100px; " src="../logo_img/ct-llogo.png" alt=""></a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport"
@@ -44,10 +44,10 @@
                     @else
                         <!-- User is not authenticated -->
                         <li class="nav-item">
-                            <a class="btn btn-primary ml-lg-3" href="{{ route('login') }}">Login</a>
+                            <a class="btn btn-primary ml-lg-3 mb-2" href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-primary ml-lg-3" href="{{ route('register') }}">Register</a>
+                            <a class="btn btn-primary ml-lg-3 mb-2" href="{{ route('register') }}">Register</a>
                         </li>
                     @endauth
                 @endif

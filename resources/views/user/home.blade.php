@@ -13,6 +13,9 @@
 
     <link rel="stylesheet" href="../assets/css/maicons.css">
 
+    <link rel="icon" href="../logo_img/favicon.png" type="image/x-icon">
+
+
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
 
     <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
@@ -37,12 +40,12 @@
         </div>
     @endif
 
-    <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
+    <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/koveribaba.jpeg);">
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
                 <span class="subhead">Let's make your life happier</span>
                 <h1 class="display-4">Healthy Living</h1>
-                <a href="#" class="btn btn-primary">Let's Consult</a>
+                <a href="#contact" class="btn btn-primary">Let's Consult</a>
             </div>
         </div>
     </div>
@@ -91,11 +94,11 @@
                             vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius,
                             inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi
                             accusantium! Placeat voluptates esse ut optio facilis!</p>
-                        <a href="about.html" class="btn btn-primary">Learn More</a>
+                        {{-- <a href="about.html" class="btn btn-primary">Learn More</a> --}}
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
                         <div class="img-place custom-img-1">
-                            <img src="../assets/img/bg-doctor.png" alt="">
+                            <img src="../assets/img/radio-bg.png" alt="">
                         </div>
                     </div>
                 </div>
