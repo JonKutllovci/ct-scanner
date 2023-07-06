@@ -19,46 +19,7 @@
 
     <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link rel="stylesheet" href="../assets/css/theme.css">
-    {{-- <style>
-        /* html,
-        body {
-            position: relative;
-            height: 100%;
-        }
-
-        body {
-            background: #eee;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        } */
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            /* font-size: 18px;
-            background: #fff; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style> --}}
 </head>
 
 <body>
@@ -66,9 +27,7 @@
     <!-- Back to top button -->
     <div class="back-to-top"></div>
 
-
     @include('user.header')
-
     @if (session()->has('message'))
         <div class="alert alert-success">
 
@@ -78,47 +37,12 @@
         </div>
     @endif
 
-    {{-- <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-
-
-
-            <div class=" swiper-slide"><img src=" ../assets/img/bg_image_1.jpg" alt="">
-                <div class="hero-section">
-                    <div class="container text-center wow zoomIn">
-                        <span class="subhead">Let's make your life happier</span>
-                        <h1 class="display-4">Healthy Living</h1>
-                        <a href="#contact" class="btn btn-primary">Let's Consult</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-    </div> --}}
-    {{-- <div class="carousel-item">
-        <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">        </div>
-    </div>
-
-        <div class="carousel-caption d-none d-md-block">
-            <div class="container text-center wow zoomIn">
-                <span class="subhead">Let's make your life happier</span>
-                <h1 class="display-4">Healthy Living</h1>
-                <a href="#contact" class="btn btn-primary">Let's Consult</a>
-            </div>
-        </div>
-    </div>
-    </div> --}}
-
     <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
                 <span class="subhead">Let's make your life happier</span>
                 <h1 class="display-4">Healthy Living</h1>
-                <a href="#contact" class="btn btn-primary">Let's Consult</a>
+                <a href="#" class="btn btn-primary">Let's Consult</a>
             </div>
         </div>
     </div>
@@ -156,20 +80,18 @@
             </div>
         </div> <!-- .page-section --> --}}
 
-    <div id="about">
+        <div class="about">
         <div class="page-section pb-0">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 py-3 wow fadeInUp">
                         <h1>Welcome to Your Health <br> Center</h1>
                         <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                            voluptua. At
-                            vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa
-                            eius,
+                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                            vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius,
                             inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi
                             accusantium! Placeat voluptates esse ut optio facilis!</p>
-                        {{-- <a href="about.html" class="btn btn-primary">Learn More</a> --}}
+                        <a href="about.html" class="btn btn-primary">Learn More</a>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
                         <div class="img-place custom-img-1">
@@ -180,7 +102,7 @@
             </div>
         </div> <!-- .bg-light -->
     </div> <!-- .bg-light -->
-    </div>
+</div>
     @include('user.doctor')
 
     @include('user.latest')
@@ -216,10 +138,6 @@
     <script src="../assets/vendor/wow/wow.min.js"></script>
 
     <script src="../assets/js/theme.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 

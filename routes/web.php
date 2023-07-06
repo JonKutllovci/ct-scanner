@@ -19,6 +19,8 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [HomeController::class,'index']);
 
+// Route::get('/doctor', [HomeController::class,'doctor']);
+
 Route::get('/add_doctor_view', [AdminController::class,'addView']);
 
 Route::post('/upload_doctor', [AdminController::class,'upload']);
@@ -46,7 +48,6 @@ Route::get('/myappointment', [HomeController::class,'myappointment']);
 Route::get('/cancel_appoint/{id}', [HomeController::class,'cancel_appoint']);
 
 Route::get('/showappointment', [AdminController::class,'showappointment']);
-
 
 Route::get('/approved/{id}', [AdminController::class,'approved']);
 

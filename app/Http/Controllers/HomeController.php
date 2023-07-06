@@ -41,14 +41,12 @@ class HomeController extends Controller
         if (Auth::id()) {
             return redirect('home');
         } else {
-            $doctor = doctor::all();
+            $doctor = Doctor::all();
             $latest = News::all()->take(3);
 
-            return view('user.home', compact('doctor','latest'));
+            return view('user.home', compact('doctor', 'latest'));
         }
     }
-
-
 
     public function appointment(Request $request)
     {
