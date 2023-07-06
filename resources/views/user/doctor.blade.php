@@ -8,10 +8,10 @@
                         <div class="card-doctor">
                             <div class="header">
                                 <img src="doctor_image/{{ $doctors->image }}" alt="">
-                                <div class="meta">
+                                {{-- <div class="meta">
                                     <a href="#"><span class="mai-call"></span></a>
                                     <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="body">
                                 <p class="text-xl mb-0">{{ $doctors->name }}</p>

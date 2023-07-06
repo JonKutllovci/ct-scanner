@@ -29,8 +29,9 @@ class HomeController extends Controller
     public function blog()
     {
         $allNews = News::all();
-        $posts = $allNews->take(5); // get first 5 items for the posts section
-        $data = $allNews->skip(5); // get the rest for the data section
+        // $latest = $allNews->take(3);
+        $posts = $allNews->take(10); // get first 5 items for the posts section
+        $data = $allNews->skip(10); // get the rest for the data section
         return view('blog-news.news', compact('posts', 'data'));
 
     }
@@ -41,7 +42,9 @@ class HomeController extends Controller
             return redirect('home');
         } else {
             $doctor = doctor::all();
-            return view('user.home', compact('doctor'));
+            $latest = News::all()->take(3);
+
+            return view('user.home', compact('doctor','latest'));
         }
     }
 

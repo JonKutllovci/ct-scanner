@@ -79,9 +79,9 @@
                             <select name="speciality" class="color" required>
                                 <option>--Select--</option>
                                 <option value="Radiolog">Radiolog</option>
-                                <option value="nose">Nose</option>
-                                <option value="heart">Heart</option>
-                                <option value="eye">Eye</option>
+                                <option value="Specialist Radiolog">Specialist Radiolog</option>
+                                <option value="Specialist Ortoped Spinal">Specialist Ortoped Spinal</option>
+                                <option value="Specialist Reumatolog">Specialist Reumatolog</option>
                             </select>
                         </div>
 

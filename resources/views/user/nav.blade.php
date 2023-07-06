@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+        <a class="navbar-brand" href="#"><span class="text-primary">CT</span>-Scanner</a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport"
@@ -14,16 +14,16 @@
                     <a class="nav-link" href="{{url('/')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About Us</a>
+                    <a class="nav-link" href="{{url('/')}}#about">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#doctor">Doctors</a>
+                    <a class="nav-link" href="{{url('/')}}#doctor">Doctors</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('news') }}">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="{{url('/')}}#contact">Contact</a>
                 </li>
 
                 @if (Route::has('login'))
