@@ -28,9 +28,11 @@ class HomeController extends Controller
 
     public function blog()
     {
-        $post =  News::all()->keyBy('id');
-        $data = News::all();
-        return view('blog-news.news', compact('post', 'data'));
+        $allNews = News::all();
+        $posts = $allNews->take(5); // get first 5 items for the posts section
+        $data = $allNews->skip(5); // get the rest for the data section
+        return view('blog-news.news', compact('posts', 'data'));
+
     }
 
     public function index()

@@ -98,69 +98,75 @@
                 </div>
             </div>
         </section>
-        @foreach ($post as $post)
+
+        @php $count = 0; @endphp
+        @foreach ($posts as $singlePost)
             <!-- Our Place -->
-            <section id="our_place">
-                <div class="container-fluid">
-                    <div class="row">
+            @if ($count % 2 == 0)
+                <section id="our_place">
+                    <div class="container-fluid">
+                        <div class="row">
 
 
-                        <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
-                            <img height="400px" src="/news_image/{{$post->image}}"  alt="Image" class="img-fluid" />
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="tm-section-text-container-2">
-                                <h2 class="tm-text-primary tm-section-title-mb tm-sm-bg-white-alpha">
-                                    {{ $post->title }} </h2>
-                                <h6 class="tm-text-accent tm-section-title-mb">
-                                    {{ $post->description }}
-                                </h6>
-                                <div class="tm-text-gray">
-                                    <p class="mb-4">
-                                        {{ $post->body
-                                        }}
-                                    </p>
+                            <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
+                                <img height="400px" src="/news_image/{{ $singlePost->image }}" alt="Image"
+                                    class="img-fluid" />
+                            </div>
+                            <div class="col-md-12 col-lg-6">
+                                <div class="tm-section-text-container-2">
+                                    <h2 class="tm-text-primary tm-section-title-mb tm-sm-bg-white-alpha">
+                                        {{ $singlePost->title }} </h2>
+                                    <h6 class="tm-text-accent tm-section-title-mb">
+                                        {{ $singlePost->description }}
+                                    </h6>
+                                    <div class="tm-text-gray">
+                                        <p class="mb-4">
+                                            {{ $singlePost->body }}
+                                        </p>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                </section>
+            @else
+                <!-- Fusce, Section 4 -->
+                <section id="section_4" class="tm-section-4">
+                    <div class="container-fluid">
+                        <div class="row flex-column-reverse flex-lg-row">
+                            <div class="col-md-12 col-lg-6 tm-text-left-container">
+                                <div class="tm-section-text-container-3 tm-bg-white-alpha h-100">
+                                    <h2 class="tm-text-accent tm-section-title-mb">
+                                        {{ $singlePost->title }}
 
-                </div>
-            </section>
-            <!-- Fusce, Section 4 -->
-            <section id="section_4" class="tm-section-4">
-                <div class="container-fluid">
-                    <div class="row flex-column-reverse flex-lg-row">
-                        <div class="col-md-12 col-lg-6 tm-text-left-container">
-                            <div class="tm-section-text-container-3 tm-bg-white-alpha h-100">
-                                <h2 class="tm-text-accent tm-section-title-mb">
-                                    {{ $post->title }}
-
-                                </h2>
-                                <h6 class="tm-text-accent tm-section-title-mb">
-                                    {{ $post->description }}
-                                </h6>
-                                <p class="mb-0">
-                                    {{ $post->body
-                                    }}
-                                </p>
+                                    </h2>
+                                    <h6 class="tm-text-accent tm-section-title-mb">
+                                        {{ $singlePost->description }}
+                                    </h6>
+                                    <p class="mb-0">
+                                        {{ $singlePost->body }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-right-container">
+                                <img height="400px" src="/news_image/{{ $singlePost->image }}" alt="Image"
+                                    class="img-fluid tm-img-right" />
                             </div>
                         </div>
-                        <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-right-container">
-                            <img height="400px" src="/news_image/{{$post->image}}" alt="Image" class="img-fluid tm-img-right" />
-                        </div>
                     </div>
-                </div>
-            </section>
-        <!-- Beautiful Rollovers -->
+                </section>
+            @endif
+            @php $count++; @endphp
+            <!-- Beautiful Rollovers -->
         @endforeach
 
 
 
 
 
-<section id="gallery">
+        <section id="gallery">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 tm-section-title-mb tm-gallery-title-col">
@@ -170,41 +176,19 @@
 
                     <div class="col-12">
                         <div class="grid">
-                            @foreach ($data as $data)
-                            <figure class="effect-duke mb-3">
-                                <img width="300px" height="400px" src="/news_image/{{$data->image}}" alt="Image" class="img-fluid" />
-                                <figcaption>
-                                    <h2>{{ $data->title }}</h2>
-                                    <p>{{ $data->description }}</p>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure>
+                            @foreach ($data as $singleData)
+                                <figure class="effect-duke mb-3">
+                                    <img width="300px" height="400px" src="/news_image/{{ $singleData->image }}"
+                                        alt="Image" class="img-fluid" />
+                                    <figcaption>
+                                        <h2>{{ $singleData->title }}</h2>
+                                        <p>{{ $singleData->description }}</p>
+                                        <a href="#">View more</a>
+                                    </figcaption>
+                                </figure>
                             @endforeach
 
-                            {{-- <figure class="effect-duke">
-                                <img src="blog/img/forty_image_12.jpg" alt="Image" class="img-fluid" />
-                                <figcaption>
-                                    <h2>Messy <span>Duke</span></h2>
-                                    <p>When he looks at the sky, he feels to run.</p>
-                                    <a href="page-2.html">View more</a>
-                                </figcaption>
-                            </figure>
-                            <figure class="effect-duke mb-3">
-                                <img src="blog/img/forty_image_13.jpg" alt="Image" class="img-fluid" />
-                                <figcaption>
-                                    <h2>Messy <span>Duke</span></h2>
-                                    <p>When he looks at the sky, he feels to run.</p>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure>
-                            <figure class="effect-duke">
-                                <img src="blog/img/forty_image_14.jpg" alt="Image" class="img-fluid" />
-                                <figcaption>
-                                    <h2>Messy <span>Duke</span></h2>
-                                    <p>When he looks at the sky, he feels to run.</p>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure> --}}
+                          
                         </div>
                     </div>
                 </div>
