@@ -11,8 +11,8 @@
                 </div>
                 <div class="col-sm-4 text-right text-sm">
                     <div class="social-mini-button">
-                        <a href="#"><span class="mai-logo-facebook-f"></span></a>
-                        <a href="#"><span class="mai-logo-instagram"></span></a>
+                        <a href="https://www.facebook.com/poliklinikactscanner/info/"><span class="mai-logo-facebook-f"></span></a>
+                        <a href="https://www.instagram.com/poliklinikactscanner/?hl=en"><span class="mai-logo-instagram"></span></a>
                     </div>
                 </div>
             </div> <!-- .row -->

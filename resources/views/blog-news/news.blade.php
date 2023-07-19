@@ -11,6 +11,8 @@
 
     <title>CT Scanner</title>
 
+    <link rel="icon" href="../logo_img/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="../assets/css/maicons.css">
 
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -29,7 +31,7 @@
     <!-- Back to top button -->
     <div class="back-to-top"></div>
 
-    <header>
+    {{-- <header>
         <div class="topbar">
             <div class="container">
                 <div class="row">
@@ -52,8 +54,8 @@
 
         @include('user.nav')
 
-    </header>
-
+    </header> --}}
+    @include('user.header')
 
 
     <!--
@@ -69,7 +71,7 @@
                     <div class="col-sm-12 offset-sm-0 col-md-6 offset-md-6">
                         <div class="tm-site-name-container">
                             <div class="tm-site-name-container-inner">
-                                <h1 class="text-uppercase tm-text-primary tm-site-name">
+                                <h1 style="color:black" class="text-uppercase tm-text-primary tm-site-name">
                                     News
                                 </h1>
                                 <p class="tm-text-primary tm-site-description">
@@ -109,7 +111,7 @@
 
 
                             <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
-                                <img height="400px" src="/news_image/{{ $singlePost->image }}" alt="Image"
+                                <img height="500px" src="/news_image/{{ $singlePost->image }}" alt="Image"
                                     class="img-fluid" />
                             </div>
                             <div class="col-md-12 col-lg-6">
@@ -166,7 +168,7 @@
 
 
 
-        <section id="gallery">
+        {{-- <section id="gallery">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 tm-section-title-mb tm-gallery-title-col">
@@ -193,7 +195,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
     </div>
     <!-- /.columns-bg -->

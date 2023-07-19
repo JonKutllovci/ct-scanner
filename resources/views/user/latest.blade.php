@@ -93,7 +93,7 @@
                         <div class="card-blog">
                             <div class="header">
                                 <a href="{{ url('news') }}" class="post-thumb">
-                                    <img src="./news_image/{{ $singleLatest->image }}" style="object-fit: contain; width: 100%; height: 100%;" alt="">
+                                    <img src="./news_image/{{ $singleLatest->image }}" style="object-fit:contain; width: 100%; height: 100%;" alt="">
                                 </a>
                             </div>
                             <div class="body">

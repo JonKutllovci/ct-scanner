@@ -13,8 +13,7 @@
 
     <link rel="stylesheet" href="../assets/css/maicons.css">
 
-    <link rel="icon" href="../logo_img/favicon.png" type="image/x-icon">
-
+    <link rel="icon" href="../logo_img/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
 
@@ -43,9 +42,9 @@
     <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/koveribaba.jpeg);">
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
-                <span class="subhead">Let's make your life happier</span>
-                <h1 class="display-4">Healthy Living</h1>
-                <a href="#contact" class="btn btn-primary">Let's Consult</a>
+                <span class="subhead">Mirsevini ne faqen tone!</span>
+                <h1 class="display-4">CT Scanner</h1>
+                <a href="#contact" class="btn btn-primary">Beje terminin tend!</a>
             </div>
         </div>
     </div>
@@ -83,18 +82,35 @@
             </div>
         </div> <!-- .page-section --> --}}
 
-        <div class="about">
-        <div class="page-section pb-0">
+
+    <div class="page-section pb-0">
+        <div id="about">
             <div class="container">
                 <div class="row align-items-center">
+
                     <div class="col-lg-6 py-3 wow fadeInUp">
-                        <h1>Welcome to Your Health <br> Center</h1>
-                        <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                            vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius,
-                            inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi
-                            accusantium! Placeat voluptates esse ut optio facilis!</p>
+
+                        <h1>Mirserdhet ne <br> CT Scanner</h1>
+                        <p class="text-grey mb-4">Mirë se vini në Poliklinikën CT Scanner të Radiologjisë, një qendër e
+                            shquar
+                            ku shkenca, teknologjia dhe kujdesi bashkohen për t'ju ofruar shërbime radiologjie. Për vite
+                            me radhë, ne kemi qenë të përkushtuar në diagnostikimin dhe trajtimin e
+                            sëmundjeve duke përdorur teknika imazhore të avancuara. Poliklinika jonë është një farol i
+                            shkëlqimit në radiologji, i përkushtuar në ofrimin e shërbimeve të sakta, efektive dhe në
+                            kohë, në një ambient të ndjeshëm që thekson komoditetin dhe respektin e pacientit.</p>
                         {{-- <a href="about.html" class="btn btn-primary">Learn More</a> --}}
+
+                        <p class="text-grey mb-4">Në zemër të institucionit tonë janë radiologët, teknologët dhe stafi i
+                            mbështetjes së trajnuar lartë dhe me përvojë, të cilët punojnë në bashkëpunim për të
+                            siguruar se ju merrni standardin më të lartë të kujdesit. Ne jemi të pajisur me teknologji
+                            të sofistikuar dhe ofrojmë një gamë të gjërë shërbimesh radiologjike përfshirë rreze-X,
+                            skanimin CT, RMN, Ultratingujt, Mjekësi Bërthamore dhe Radiologji Interventive. Të drejtuar
+                            nga një angazhim i fortë për cilësinë dhe sigurinë, ne përpiqemi të reduktojmë ekspozimin
+                            ndaj radiacionit ndërsa jemi duke ofruar imazhe të qarta, të sakta. Qëllimi ynë është të
+                            punojmë në tandem me mjekun tuaj primar për të kuptuar nevojat tuaja, të ofrojmë diagnoza të
+                            sakta dhe të hartojmë rrugën më të mirë të trajtimit për ju. Mirë se vini në Poliklinikën e
+                            Radiologjisë, ku shëndeti juaj është prioriteti ynë më i lartë.</p>
+
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
                         <div class="img-place custom-img-1">
@@ -105,7 +121,6 @@
             </div>
         </div> <!-- .bg-light -->
     </div> <!-- .bg-light -->
-</div>
     @include('user.doctor')
 
     @include('user.latest')

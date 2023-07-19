@@ -28,11 +28,12 @@ class HomeController extends Controller
 
     public function blog()
     {
-        $allNews = News::all();
-        // $latest = $allNews->take(3);
-        $posts = $allNews->take(10); // get first 5 items for the posts section
-        $data = $allNews->skip(10); // get the rest for the data section
-        return view('blog-news.news', compact('posts', 'data'));
+        // $allNews = News::all();
+        // $posts = $allNews->take(10);
+        // $data = $allNews->skip(10);
+        // return view('blog-news.news', compact('posts', 'data'));
+        $posts = News::orderBy('created_at', 'desc')->get();
+        return view('blog-news.news', compact('posts'));
 
     }
 
